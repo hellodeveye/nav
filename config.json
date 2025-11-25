@@ -1,0 +1,21 @@
+{
+    "settings": {
+        "title": "网站导航",
+        "subtitle": "一站式访问您常用的网站",
+        "repositoryUrl": "https://github.com/your-username/website-navigation"
+    },
+    "items": [
+        {
+            "id": "default",
+            "name": "默认导航",
+            "url": "default.json",
+            "icon": "house"
+        },
+        {
+            "id": "project",
+            "name": "项目导航",
+            "url": "project.json",
+            "icon": "briefcase"
+        }
+    ]
+}

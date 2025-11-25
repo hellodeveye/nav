@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">网站导航</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+
+<body>
+    <!-- 3D抽屉菜单 -->
+    <div class="drawer-container">
+        <div class="drawer-panel">
+            <div class="drawer-header">
+                <h3>实验功能</h3>
+                <button class="drawer-close">
+                    <i class="ph-bold ph-x"></i>
+                </button>
+            </div>
+            <div class="drawer-content">
+                <div class="drawer-section">
+                    <h4>切换导航</h4>
+                    <div id="drawer-configs">
+                        <!-- 配置列表将通过JavaScript动态生成 -->
+                    </div>
+
+                </div>
+                <div class="drawer-divider"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <div class="sidebar-inner">
+                <div class="logo-container">
+                    <div class="logo" id="logo-toggle">
+                        <img src="img/logo.png" alt="网站导航">
+                    </div>
+                    <h3 class="logo-text" id="site-title">网站导航</h3>
+                    <p class="logo-subtitle" id="site-subtitle">一站式访问您常用的网站</p>
+                </div>
+
+                <div class="sidebar-menu">
+                    <div class="menu-item active">
+                        <i class="ph-fill ph-grid-nine"></i>
+                        <span>全部</span>
+                    </div>
+                    <!-- 侧边栏分类将通过JavaScript动态生成 -->
+                    <div id="sidebar-categories"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="search-container">
+                    <i class="ph-fill ph-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="搜索网站...">
+                </div>
+                <div class="user-info">
+                    <span id="visit-count">工具已被使用 0 次</span>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="切换深色模式">
+                        <i class="ph-fill ph-sun light-icon"></i>
+                        <i class="ph-fill ph-moon dark-icon"></i>
+                    </button>
+                    <a href="#" class="gitlab-link" target="_blank" aria-label="查看源代码">
+                        <i class="ph-fill ph-gitlab-logo"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <!-- 所有分类区域 -->
+                <div id="all-categories">
+                    <!-- 分类内容将通过JavaScript动态生成 -->
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>© <span id="current-year"></span> 网站导航</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- AI Chat Floating Button -->
+    <button class="chat-fab" id="chat-fab" title="AI 助手" style="display: none;">
+        <i class="ph-fill ph-chat-circle-text"></i>
+    </button>
+
+    <!-- AI Chat Modal -->
+    <div class="chat-modal" id="chat-modal">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <i class="ph-fill ph-robot"></i>
+                    <span>AI 助手</span>
+                </div>
+                <div class="header-actions">
+                    <button id="clear-history-btn" title="清除历史记录">
+                        <i class="ph-bold ph-trash"></i>
+                    </button>
+                    <button id="clear-key-btn" title="清除 API Key">
+                        <i class="ph-bold ph-gear"></i>
+                    </button>
+                    <button class="chat-close" id="chat-close">
+                        <i class="ph-bold ph-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- API Key 输入界面 -->
+            <div class="chat-auth" id="chat-auth">
+                <div class="auth-icon">
+                    <i class="ph-duotone ph-key"></i>
+                </div>
+                <h3>需要 API Key</h3>
+                <p>请输入您的 火山引擎 API Key 以开始对话。Key 将仅保存在您的本地浏览器中。</p>
+                <div class="input-group">
+                    <input type="password" id="api-key-input" placeholder="sk-..." autocomplete="off">
+                    <button id="save-key-btn">开始使用</button>
+                </div>
+                <p class="auth-tip">还没有 Key？<a href="https://www.volcengine.com/product/ark" target="_blank">去申请</a></p>
+            </div>
+
+            <!-- 对话界面 -->
+            <div class="chat-interface" id="chat-interface" style="display: none;">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message ai">
+                        <div class="message-avatar">
+                            <i class="ph-fill ph-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            你好！我是 AI 助手，有什么可以帮你的吗？
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="chat-input-wrapper">
+                        <textarea id="chat-input" placeholder="输入消息..." rows="1"></textarea>
+                        <button id="send-btn" disabled>
+                            <i class="ph-fill ph-paper-plane-right"></i>
+                        </button>
+                    </div>
+                    <div class="chat-footer">
+                        <span>Powered by Gemini</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要脚本 -->
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+
+</html>

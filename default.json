@@ -1,0 +1,227 @@
+{
+    "categories": [
+        {
+            "name": "常用工具",
+            "icon": "wrench",
+            "sites": [
+                  {
+                    "name": "GitLab",
+                    "url": "https://gitlab.com/",
+                    "description": "代码仓库"
+                },
+                {
+                    "name": "Jenkins",
+                    "url": "https://www.jenkins.io/",
+                    "description": "Jenkins"
+                },
+                {
+                    "name": "禅道",
+                    "url": "https://www.zentao.net/",
+                    "description": "禅道"
+                }
+            ]
+        },
+        {
+            "name": "团队协作",
+            "icon": "users",
+            "sites": [
+                {
+                    "name": "钉钉",
+                    "url": "https://www.dingtalk.com/",
+                    "description": "钉钉",
+                    "icon": "https://img.alicdn.com/imgextra/i4/O1CN01RtfAks1Xa6qJFAekm_!!6000000002939-2-tps-128-128.png"
+                },
+                {
+                    "name": "飞书",
+                    "url": "https://www.feishu.cn/",
+                    "description": "飞书",
+                    "icon": "https://lf-package-cn.feishucdn.com/obj/feishu-static/ccm/pc/web/resource/bear/feishu.ico"
+                },
+                {
+                    "name": "企业微信",
+                    "url": "https://work.weixin.qq.com/",
+                    "description": "企业微信"
+                }
+            ]
+        },
+          {
+            "name": "AI工具",
+            "icon": "robot",
+            "sites": [
+                {
+                    "name": "Kimi",
+                    "url": "https://kimi.ai",
+                    "description": "AI工具Kimi",
+                    "icon": "https://statics.moonshot.cn/kimi-chat/favicon.ico"
+                },
+                {
+                    "name": "豆包",
+                    "url": "https://www.doubao.com",
+                    "description": "AI工具豆包",
+                    "icon": "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/logo-icon.png"
+                },
+                {
+                    "name": "DeepSeek",
+                    "url": "https://www.deepseek.com",
+                    "description": "AI工具DeepSeek"
+                },
+                {
+                    "name": "文心一言",
+                    "url": "https://yiyan.baidu.com",
+                    "description": "AI工具文心一言",
+                    "icon": "https://nlp-eb.cdn.bcebos.com/logo/favicon.ico"
+                },
+                {
+                    "name": "纳米搜索",
+                    "url": "https://www.n.cn",
+                    "description": "AI工具纳米搜索"
+                }
+            ]
+        },
+        {
+            "name": "开放平台",
+            "icon": "book-open",
+            "sites": [
+                {
+                    "name": "企业微信",
+                    "url": "https://developer.work.weixin.qq.com",
+                    "description": "企业微信开放平台"
+                },
+                {
+                    "name": "钉钉",
+                    "url": "https://open.dingtalk.com/document/",
+                    "description": "钉钉开放平台",
+                    "icon": "https://img.alicdn.com/imgextra/i4/O1CN01RtfAks1Xa6qJFAekm_!!6000000002939-2-tps-128-128.png"
+                },
+                {
+                    "name": "飞书",
+                    "url": "https://open.feishu.cn/document/home/index",
+                    "description": "飞书开放平台",
+                    "icon": "https://lf-package-cn.feishucdn.com/obj/feishu-static/lark/open/doc/frontend/favicon.png"
+                }
+            ]
+        },
+        {
+            "name": "学习资源",
+            "icon": "book-open",
+            "sites": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com",
+                    "description": "全球最大的代码托管平台"
+                },
+                {
+                    "name": "Stack Overflow",
+                    "url": "https://stackoverflow.com",
+                    "description": "全球最大的程序员问答社区"
+                },
+                {
+                    "name": "MDN Web Docs",
+                    "url": "https://developer.mozilla.org",
+                    "description": "最全面的Web开发文档"
+                },
+                {
+                    "name": "W3Schools",
+                    "url": "https://www.w3schools.com",
+                    "description": "领先的Web技术学习网站"
+                }
+            ]
+        },
+        {
+            "name": "办公工具",
+            "icon": "briefcase",
+            "sites": [
+                {
+                    "name": "PDF转Word",
+                    "url": "https://www.pdftoword.com",
+                    "description": "PDF文件转Word文档工具",
+                    "useFavicon": false,
+                    "icon": "file-pdf"
+                },
+                {
+                    "name": "PDF转Excel",
+                    "url": "https://www.pdftoexcel.com",
+                    "description": "PDF文件转Excel表格工具",
+                    "useFavicon": false,
+                    "icon": "file-xls"
+                },
+                {
+                    "name": "在线PS",
+                    "url": "https://www.photopea.com",
+                    "description": "免费在线图片编辑工具",
+                    "useFavicon": false,
+                    "icon": "image"
+                },
+                {
+                    "name": "石墨文档",
+                    "url": "https://shimo.im",
+                    "description": "在线协作文档平台"
+                }
+            ]
+        },
+        {
+            "name": "开发工具",
+            "icon": "code",
+            "sites": [
+                {
+                    "name": "Visual Studio Code",
+                    "url": "https://code.visualstudio.com",
+                    "description": "微软开发的代码编辑器"
+                },
+                {
+                    "name": "CodePen",
+                    "url": "https://codepen.io",
+                    "description": "前端代码在线编辑与分享平台"
+                },
+                {
+                    "name": "JSON格式化",
+                    "url": "https://jsonformatter.curiousconcept.com",
+                    "description": "JSON数据格式化工具",
+                    "useFavicon": false,
+                    "icon": "brackets-curly"
+                },
+                {
+                    "name": "Can I Use",
+                    "url": "https://caniuse.com",
+                    "description": "查询Web特性兼容性的网站",
+                    "icon": "https://caniuse.com/img/favicon-128.png"
+                },
+                {
+                    "name": "17ce",
+                    "url": "https://www.17ce.com/",
+                    "description": "网站测速",
+                    "icon": "https://www.17ce.com/favicon.ico"
+                }
+            ]
+        },
+        {
+            "name": "技术博客",
+            "icon": "book-open",
+            "sites": [
+                {
+                    "name": "阮一峰",
+                    "url": "https://www.ruanyifeng.com/blog/archives.html",
+                    "description": "阮一峰"
+                },
+                {
+                    "name": "小林coding",
+                    "url": "https://xiaolincoding.com",
+                    "description": "小林coding",
+                    "icon": "https://cdn.xiaolincoding.com/icon.webp"
+                },
+                {
+                    "name": "美团技术团队",
+                    "url": "https://tech.meituan.com",
+                    "description": "美团技术团队",
+                    "icon": "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/apple-icon-180x180.png?v=Whistle&t=20181017-1r"
+                },
+                {
+                    "name": "ThoughtWorks洞见",
+                    "url": "https://www.thoughtworks.com/zh-cn/insights",
+                    "description": "ThoughtWorks洞见",
+                    "icon": "https://www.thoughtworks.com/etc.clientlibs/thoughtworks/clientlibs/clientlib-site/resources/images/favicon.ico"
+                }
+            ]
+        }
+    ]
+}
