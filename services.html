@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务注册表</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/services.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边栏 -->
+        <div class="sidebar">
+            <div class="sidebar-inner">
+                <div class="logo-container">
+                    <a href="index.html" class="logo" title="返回导航">
+                        <img src="img/logo.png" alt="网站导航">
+                    </a>
+                    <h3 class="logo-text">服务注册表</h3>
+                    <p class="logo-subtitle">团队基础设施地址管理</p>
+                </div>
+
+                <div class="sidebar-menu">
+                    <div class="menu-item active" data-env="all">
+                        <i class="ph-fill ph-grid-nine"></i>
+                        <span>全部</span>
+                    </div>
+                    <div class="menu-item" data-env="production">
+                        <i class="ph-fill ph-rocket-launch"></i>
+                        <span>生产环境</span>
+                    </div>
+                    <div class="menu-item" data-env="staging">
+                        <i class="ph-fill ph-flask"></i>
+                        <span>测试环境</span>
+                    </div>
+                    <div class="menu-item" data-env="development">
+                        <i class="ph-fill ph-code"></i>
+                        <span>开发环境</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="search-container">
+                    <i class="ph-fill ph-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="搜索服务...">
+                </div>
+                <div class="user-info">
+                    <button id="theme-toggle-services" class="theme-toggle" title="切换主题">
+                        <i class="ph-fill ph-sun light-icon"></i>
+                        <i class="ph-fill ph-moon dark-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <!-- 服务列表 -->
+                <div id="services-content">
+                    <!-- 动态生成 -->
+                </div>
+
+                <!-- 空状态 -->
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <p>没有找到匹配的服务</p>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>© <span id="current-year"></span> 服务注册表 | 
+                    <a href="index.html">返回网站导航</a>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Toast 容器 -->
+    <div id="toast-container"></div>
+
+    <script src="js/services.js"></script>
+</body>
+</html>

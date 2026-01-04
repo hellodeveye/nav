@@ -963,6 +963,9 @@ body::after {
     color: var(--text-color);
     transition: all 0.3s ease;
     border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    text-decoration: none;
 }
 
 .drawer-menu-item:hover {

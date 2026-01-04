@@ -1,0 +1,86 @@
+{
+    "categories": [
+        {
+            "name": "生产环境",
+            "icon": "rocket-launch",
+            "services": [
+                {
+                    "name": "MySQL 主库",
+                    "content": "Host 192.168.1.100 \nPort 3000 \nUser Root \nPassword 123123"
+                },
+                {
+                    "name": "MySQL 从库",
+                    "content": "192.168.1.101:3306"
+                },
+                {
+                    "name": "MongoDB",
+                    "content": "192.168.1.110:27017"
+                },
+                {
+                    "name": "Redis 主节点",
+                    "content": "192.168.1.102:6379"
+                },
+                {
+                    "name": "Redis 从节点",
+                    "content": "192.168.1.103:6379"
+                },
+                {
+                    "name": "RabbitMQ",
+                    "content": "192.168.1.104:5672"
+                },
+                {
+                    "name": "Kafka",
+                    "content": "192.168.1.105:9092"
+                },
+                {
+                    "name": "Elasticsearch",
+                    "content": "192.168.1.106:9200"
+                },
+                {
+                    "name": "Nacos",
+                    "content": "192.168.1.107:8848"
+                },
+                {
+                    "name": "Prometheus",
+                    "content": "192.168.1.108:9090"
+                },
+                {
+                    "name": "Grafana",
+                    "content": "192.168.1.108:3000"
+                }
+            ]
+        },
+        {
+            "name": "测试环境",
+            "icon": "flask",
+            "services": [
+                {
+                    "name": "MySQL 测试库",
+                    "content": "192.168.2.100:3306"
+                },
+                {
+                    "name": "Redis 测试",
+                    "content": "192.168.2.102:6379"
+                },
+                {
+                    "name": "Nacos 测试",
+                    "content": "192.168.2.107:8848"
+                }
+            ]
+        },
+        {
+            "name": "开发环境",
+            "icon": "code",
+            "services": [
+                {
+                    "name": "MySQL 开发库",
+                    "content": "localhost:3306"
+                },
+                {
+                    "name": "Redis 开发",
+                    "content": "localhost:6379"
+                }
+            ]
+        }
+    ]
+}
