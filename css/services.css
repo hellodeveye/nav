@@ -23,11 +23,17 @@
     border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 20px;
+    /* 恢复内边距 */
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
     backdrop-filter: blur(calc(var(--blur-strength) * 0.7));
     -webkit-backdrop-filter: blur(calc(var(--blur-strength) * 0.7));
     box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+    /* Flex layout for equal height children */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* 确保内容不溢出圆角 */
 }
 
 .service-code-card::before {
@@ -68,32 +74,85 @@
     box-shadow: 0 25px 35px rgba(90, 200, 250, 0.15);
 }
 
-.service-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    margin-bottom: 10px;
+/* 卡片头部 */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
+.service-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0;
+    padding-left: 4px;
+}
+
+/* 代码块容器 */
+.code-block-wrapper {
+    display: flex;
+    background: rgba(15, 23, 42, 0.04);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    flex: 1;
+    min-height: 60px;
+    font-family: 'Monaco', 'Menlo', 'Consolas', 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+[data-theme="dark"] .code-block-wrapper {
+    background: rgba(30, 41, 59, 0.4);
+}
+
+/* 行号样式 */
+.line-numbers {
+    padding: 10px 8px;
+    text-align: right;
+    color: var(--text-secondary);
+    opacity: 0.4;
+    border-right: 1px solid var(--border-color);
+    user-select: none;
+    background: rgba(0, 0, 0, 0.02);
+    white-space: pre;
+    min-width: 32px;
+}
+
+[data-theme="dark"] .line-numbers {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* 代码内容样式 */
 .service-content {
     display: block;
-    font-family: 'Monaco', 'Menlo', 'Consolas', 'Ubuntu Mono', monospace;
-    font-size: 14px;
-    line-height: 1.5;
     color: var(--text-color);
-    background: rgba(15, 23, 42, 0.06);
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    padding: 10px 12px;
+    margin: 0;
     white-space: pre-wrap;
     word-break: break-all;
-    margin: 0;
+    flex: 1;
+    overflow-y: auto;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    max-height: 200px;
+}
+
+/* 滚动条样式调整，确保只在内容区滚动（如果需要）或者整体滚动 */
+/* 这里我们让整个 wrapper 在需要时滚动，或者限制最大高度 */
+.code-block-wrapper {
     max-height: 200px;
     overflow-y: auto;
 }
 
-[data-theme="dark"] .service-content {
-    background: rgba(30, 41, 59, 0.6);
+.service-content {
+    max-height: none;
+    overflow-y: visible;
 }
 
 /* 卡片内已复制提示 */

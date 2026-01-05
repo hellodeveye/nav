@@ -10,7 +10,7 @@ let currentSearchTerm = '';
 /**
  * 页面初始化
  */
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     try {
         initTheme();
         document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 function initTheme() {
     const themeToggle = document.getElementById('theme-toggle-services');
     const savedTheme = localStorage.getItem('theme');
-    
+
     if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
     } else {
@@ -38,7 +38,7 @@ function initTheme() {
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     }
-    
+
     themeToggle.addEventListener('click', () => {
         const current = document.documentElement.getAttribute('data-theme');
         const newTheme = current === 'dark' ? 'light' : 'dark';
@@ -63,14 +63,15 @@ async function loadServices() {
 function renderServices() {
     const container = document.getElementById('services-content');
     const emptyState = document.getElementById('empty-state');
-    
+
     container.innerHTML = '';
     let hasVisibleServices = false;
-    
+
     SERVICES_DATA.categories.forEach(category => {
         // 应用搜索筛选
         const filteredServices = category.services.filter(service => {
             if (!currentSearchTerm) return true;
+
             const searchFields = [
                 service.name,
                 service.content,
@@ -79,15 +80,15 @@ function renderServices() {
             const term = currentSearchTerm.toLowerCase();
             return searchFields.some(field => field.includes(term));
         });
-        
+
         if (filteredServices.length === 0) return;
-        
+
         hasVisibleServices = true;
-        
+
         const categoryEl = document.createElement('div');
         categoryEl.className = 'category-section';
         categoryEl.id = `category-${category.name}`;
-        
+
         categoryEl.innerHTML = `
             <h2 class="category-title">
                 <i class="ph-fill ph-${category.icon || 'folder'}"></i>
@@ -97,18 +98,21 @@ function renderServices() {
                 ${filteredServices.map(service => createServiceCard(service)).join('')}
             </div>
         `;
-        
+
         container.appendChild(categoryEl);
     });
-    
+
     // 绑定卡片点击事件
     container.querySelectorAll('.service-code-card').forEach(card => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            // 如果有选中文本，不触发复制
+            if (window.getSelection().toString().length > 0) return;
+
             const content = card.dataset.content;
             copyToClipboard(content, card);
         });
     });
-    
+
     emptyState.style.display = hasVisibleServices ? 'none' : 'flex';
 }
 
@@ -117,12 +121,19 @@ function renderServices() {
  */
 function createServiceCard(service) {
     const content = service.content;
-    
+    const lineCount = content.split('\n').length;
+    const lineNumbers = Array.from({ length: lineCount }, (_, i) => i + 1).join('\n');
+
     return `
         <div class="service-code-card" data-content="${content.replace(/"/g, '&quot;')}">
+            <div class="card-header">
+                <div class="service-name">${service.name}</div>
+            </div>
+            <div class="code-block-wrapper">
+                <div class="line-numbers">${lineNumbers}</div>
+                <pre class="service-content">${escapeHtml(content)}</pre>
+            </div>
             <div class="copied-tip">已复制</div>
-            <div class="service-name">${service.name}</div>
-            <pre class="service-content">${escapeHtml(content)}</pre>
         </div>
     `;
 }
@@ -156,7 +167,7 @@ function initSidebarFilters() {
         item.addEventListener('click', () => {
             menuItems.forEach(m => m.classList.remove('active'));
             item.classList.add('active');
-            
+
             const env = item.dataset.env;
             if (env === 'all') {
                 // 滚动到顶部
